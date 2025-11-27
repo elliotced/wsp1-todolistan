@@ -3,8 +3,6 @@ require "awesome_print"
 
 class App < Sinatra::Base
 
-    # Funktion för att prata med databasen
-    # Exempel på användning: db.execute('SELECT * FROM fruits')
     def db
       return @db if @db
 
@@ -14,9 +12,16 @@ class App < Sinatra::Base
       return @db
     end
 
-    # Routen /
+    # Routen / index
     get '/' do
-        erb(:"index")
+      @todos = db.execute('SELECT * FROM todos')
+      p @todos
+      erb(:"index")
     end
 
+    # Routen tar bort ToDo med id
+    post '/:id/delete' do | id |
+      db.execute('DELETE FROM todos WHERE id=?', id)
+      redirect('/')
+    end
 end

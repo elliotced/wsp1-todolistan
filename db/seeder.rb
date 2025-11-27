@@ -21,15 +21,14 @@ class Seeder
   def self.create_tables
     db.execute('CREATE TABLE todos (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                category_id INTEGER 
+                title TEXT NOT NULL, 
                 description TEXT)')
   end
 
   def self.populate_tables
-    db.execute('INSERT INTO todos (name, description) VALUES ("Köp mjölk", "3 lite mellanmjölk, eko")')
-    db.execute('INSERT INTO todos (name, description) VALUES ("Köp julgran", "En rödgran")')
-    db.execute('INSERT INTO todos (name, description) VALUES ("Pynta gran", "Glöm inte lamporna i granen och tomten")')
+    db.execute('INSERT INTO todos (id, title, description) VALUES (1, "Köp mjölk", "3 lite mellanmjölk, eko")')
+    db.execute('INSERT INTO todos (id, title, description) VALUES (2, "Köp julgran", "En rödgran")')
+    db.execute('INSERT INTO todos (id, title, description) VALUES (3, "Pynta gran", "Glöm inte lamporna i granen och tomten")')
   end
 
   private
