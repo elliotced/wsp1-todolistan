@@ -48,3 +48,36 @@ ul {
   background: #e0b681;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+/* Style for edit form */
+.edit-form {
+  max-width: 500px;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.edit-form label {
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.edit-form input[type="text"] {
+  padding: 0.6em;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-form input[type="text"]:focus {
+  border-color: #c9a27f;
+  box-shadow: 0 0 5px rgba(201,162,127,0.4);
+  outline: none;
+}
+
+.edit-form .button {
+  align-self: flex-start;
+  margin-top: 1em;
+}

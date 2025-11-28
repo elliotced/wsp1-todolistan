@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit ToDo</title>
+    <link rel="stylesheet" type="text/css" href="/style.css?<%=Time.now.to_i%>">
+  </head>
+  <body>
+    <header>
+      <h1 class="title">ToDo Application - Edit ToDo</h1>
+    </header>
+    <hr>
+    <main>
+      <form class="edit-form item" action="/<%= @todo['id'] %>/update" method="post">
+        <label for="title">Frukt</label>
+        <input type="text" id="title" name="title" value="<%= @todo['title'] %>" required>
+
+        <label for="description">Beskrivning</label>
+        <input type="text" id="description" name="description" value="<%= @todo['description'] %>" required>
+
+        <input class="button" type="submit" value="Uppdatera">
+      </form>
+    </main>
+  </body>
+</html>
